@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h1>Tic-Tac-Toe</h1>
+        </header>
+        <main>
+            <dialog id="playersNames">
+                <form class="hidden" id="ChangeNames">
+                    <label for="playerOne">Player one's name:</label>
+                    <input type="text" id="playerOne" name="playerOne" placeholder="Player one" autocomplete="off">
+                    <label for="playerTwo">Player two's name:</label>
+                    <input type="text" id="playerTwo" name="playerTwo" placeholder="Player two" autocomplete="off">
+                    <div>
+                        <button type="submit" id="saveBtn">Save</button>
+                        <button type="button" id="cancelBtn">Cancel</button>
+                    </div>
+                   
+                </form>
+            </dialog>
+            <p id="turns">
+                <span class="red">Player one</span>
+                 vs 
+                 <span class="blue">Player two</span>
+            </p>
+            <div class="buttonWrap">
+                <button  class="buttons" id="editBtn">Change Names</button>
+                <input type="button"  class="buttons" id="startBtn" value="START">
+            </div>
+
+          <div id="board"></div>    
+            
+        </main>
+
+    </section>
+    
+</body>
+</html>

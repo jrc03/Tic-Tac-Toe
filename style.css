@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    background-color: #fbf4ed;
+}
+section{
+    display: grid;
+    grid-template-rows: 120px 1fr;
+}
+header{
+    display: flex;
+    padding:10px;
+    font-size: 32px;
+    background-color: #800000;
+    color: white;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+   
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+dialog{
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #F2E8C6;
+}
+dialog button{ 
+    
+    text-transform: uppercase;
+    background-color: #fbf4ed;
+    border: 3px solid #982B1C;
+    border-radius: 8px;
+    width: 70px;
+    padding: 10px;
+   
+    
+
+}
+dialog button:hover{
+    background-color: #982B1C;
+    color: white;
+    cursor: pointer;
+}
+dialog div{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+}
+
+dialog input[type="text"]{
+padding: 10px;
+border-radius: 6px;
+border: none;
+
+
+}
+
+dialog input[type="text"]:focus{
+    outline: 2px solid #982B1C;
+    
+}
+.hidden{
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+}
+
+#turns{
+    text-transform: uppercase;
+    margin: 20px;
+    font-size: 24px;
+}
+.red{
+    color: red;
+}
+.blue{
+    color: blue;
+}
+
+.buttons {
+text-transform: uppercase;
+    margin: 20px;
+    margin-left: 0px;
+    background-color: #fbf4ed;
+    border: 3px solid #982B1C;
+    border-radius: 8px;
+    width: 120px;
+    padding: 10px;
+    
+}
+.buttons:hover{
+    background-color: #982B1C;
+    color: white;
+    cursor: pointer;
+}
+
+
+.gameboard{
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    grid-template-rows: repeat(3, 150px);
+}
+.cell:hover{
+    background-color: #ffcccc;
+}
+#board{
+    margin: 20px;
+    border: 3px solid black;
+    justify-self: center;
+    align-self: center;
+}
+.cell{
+    border: 3px solid black;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+}
