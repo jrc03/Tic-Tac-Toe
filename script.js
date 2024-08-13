@@ -64,8 +64,12 @@ const handleCellClick = (cell, index) => {
 
         updateCurrentPlayerDisplay(currentPlayer);
 
-        if (checkWin()) {
+        const gameStatus = checkWin();
+
+        if (gameStatus === 'win') {
             showWinnerDialog(currentPlayer);
+        } else if (gameStatus === 'tie') {
+            showTieDialog();
         }
     }
 };
@@ -93,14 +97,22 @@ const checkWin = () => {
         [2, 4, 6]
     ];
 
+    // Check for a winning combination
     for (let i = 0; i < winningCombinations.length; i++) {
         const [a, b, c] = winningCombinations[i];
         if (gameboard[a] === gameboard[b] && gameboard[b] === gameboard[c] && gameboard[a] !== "") {
-            return true;
+            return 'win';
         }
     }
-    return false;
+
+    // Check for a tie (no empty cells)
+    if (gameboard.every(cell => cell !== "")) {
+        return 'tie';
+    }
+
+    return false; // No win or tie
 };
+
 
 // Function to show the winner dialog
 const showWinnerDialog = (currentPlayer) => {
@@ -108,6 +120,21 @@ const showWinnerDialog = (currentPlayer) => {
     winner.textContent = `${currentPlayer.name} wins!`;
 
     const winnerDialog = document.querySelector(".winner");
+    winnerDialog.showModal();
+
+    const closeWinnerDialog = document.querySelector(".closeWinnerDialog");
+    closeWinnerDialog.addEventListener('click', () => {
+        winnerDialog.close();
+        resetGame();
+    });
+};
+
+
+const showTieDialog = () => {
+    const winnerDialog = document.querySelector(".winner");
+    const winner = document.querySelector("#winnerName");
+    winner.textContent = "It's a tie!";
+
     winnerDialog.showModal();
 
     const closeWinnerDialog = document.querySelector(".closeWinnerDialog");
