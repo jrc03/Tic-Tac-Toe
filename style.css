@@ -82,9 +82,11 @@ gap: 10px;
 }
 .red{
     color: red;
+    
 }
 .blue{
     color: blue;
+   
 }
 
 .buttons {
@@ -94,8 +96,9 @@ text-transform: uppercase;
     background-color: #fbf4ed;
     border: 3px solid #982B1C;
     border-radius: 8px;
-    width: 120px;
+    width: 130px;
     padding: 10px;
+    font-weight: 600;
     
 }
 .buttons:hover{
@@ -105,23 +108,30 @@ text-transform: uppercase;
 }
 
 
-.gameboard{
-    display: grid;
-    grid-template-columns: repeat(3,150px);
-    grid-template-rows: repeat(3, 150px);
-}
-.cell:hover{
-    background-color: #ffcccc;
-}
-#board{
+#board {
     margin: 20px;
-    border: 3px solid black;
     justify-self: center;
     align-self: center;
 }
-.cell{
+
+.cellWrap {
+    display: grid; /* Apply the grid layout to cellWrap */
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    border: 3px solid black;
+}
+
+.cell:hover {
+    background-color: #ffcccc;
+}
+
+.cell {
     border: 3px solid black;
     text-align: center;
-    font-size: 30px;
+    font-size: 36px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
 }
