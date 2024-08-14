@@ -13,14 +13,14 @@
             <h1>Tic-Tac-Toe</h1>
         </header>
         <main>
-            <dialog id="playersNames">
+            <dialog class="playersNames">
                 <form class="hidden" id="ChangeNames">
                     <label for="playerOne">Player one's name:</label>
-                    <input type="text" id="playerOne" name="playerOne" placeholder="Player one" autocomplete="off">
+                    <input type="text" id="playerOne" name="playerOne" placeholder="Player one" autocomplete="off" maxlength="10">
                     <label for="playerTwo">Player two's name:</label>
-                    <input type="text" id="playerTwo" name="playerTwo" placeholder="Player two" autocomplete="off">
+                    <input type="text" id="playerTwo" name="playerTwo" placeholder="Player two" autocomplete="off" maxlength="10">
                     <div>
-                        <button type="submit" id="saveBtn">Save</button>
+                        <button type="button" id="saveBtn">Save</button>
                         <button type="button" id="cancelBtn">Cancel</button>
                     </div>
                    
@@ -41,9 +41,11 @@
           
             <div id="result">
                 <dialog class="winner">
-                    <h2 id="winnerName"></h2>
-                   <input type="button" value="Close" class="closeWinnerDialog">
-
+                    <div>
+                        <h2 id="winnerName"></h2>
+                        <input type="button" value="Close" class="closeWinnerDialog">
+     
+                    </div>
                 </dialog>
             </div> 
             <div id="resetCont" class="buttonWrap">

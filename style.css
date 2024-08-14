@@ -24,13 +24,15 @@ main{
     align-content: center;
     justify-content: center;
 }
-dialog{
-    height: 300px;
+.playersNames{
+    
     width: 200px;
     border-radius: 10px;
-    background-color: #F2E8C6;
+    background-color: #fbf4ed;
+    font-weight: 600;
+   
 }
-dialog button{ 
+.playersNames button{ 
     
     text-transform: uppercase;
     background-color: #fbf4ed;
@@ -38,33 +40,42 @@ dialog button{
     border-radius: 8px;
     width: 70px;
     padding: 10px;
+    font-weight: 600;
    
     
 
 }
-dialog button:hover{
+.playersNames button:hover{
     background-color: #982B1C;
     color: white;
     cursor: pointer;
 }
-dialog div{
-    display: flex;
-    align-items: center;
+.playersNames div{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   justify-items: center;
     padding: 10px;
     gap: 20px;
-    align-content: center;
-    justify-content: center;
+ 
 }
+.playersNames form{
+display: flex;
+align-items: center;
+justify-content: center;
 
-dialog input[type="text"]{
+
+}
+.playersNames input[type="text"]{
 padding: 10px;
 border-radius: 6px;
 border: none;
+background-color: #feeddd;
 
 
 }
 
-dialog input[type="text"]:focus{
+.playersNames input[type="text"]:focus{
     outline: 2px solid #982B1C;
     
 }
@@ -134,4 +145,57 @@ text-transform: uppercase;
     justify-content: center;
     align-items: center;
     font-weight: 700;
+}
+
+
+.winner{
+height: 150px;
+width: 150px;
+border-radius: 10px;
+background-color: #fbf4ed;
+overflow: hidden;
+}
+
+.winner h2{
+    text-align: center;
+    font-size: 24px;
+}
+
+.winner input[type="button"]{
+    text-transform: uppercase;
+    background-color: #fbf4ed;
+    border: 3px solid #982B1C;
+    border-radius: 8px;
+    width: 100px;
+    padding: 10px;
+}
+
+.winner input[type="button"]:hover{
+    background-color: #982B1C;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+}
+
+.winner div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.winner::backdrop{
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+
+}
+
+.playersNames::backdrop{
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

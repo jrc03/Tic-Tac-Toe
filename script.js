@@ -1,16 +1,3 @@
-// Player constructor
-function Player(name, marker, color) {
-    this.name = name;
-    this.marker = marker;
-    this.color = color;
-}
-
-// Players array
-const players = [
-    new Player("Player 1", "X", "red"),
-    new Player("Player 2", "O", "blue")
-];
-
 // DOM Elements
 const startBtn = document.querySelector("#startBtn");
 const board = document.querySelector("#board");
@@ -19,6 +6,43 @@ const changeNames = document.querySelector("#editBtn");
 const dialog = document.querySelector("dialog");
 const closeDialog = document.querySelector("#cancelBtn");
 const resetCont = document.querySelector("#resetCont");
+
+const winnerDialog = document.querySelector(".winner");
+const saveNames= document.querySelector("#saveBtn");
+
+
+// Player constructor
+function Player(name, marker, color) {
+    this.name = name;
+    this.marker = marker;
+    this.color = color;
+}
+
+
+const players = [
+    new Player('Player One', "X", "red"),
+    new Player('Player Two', "O", "blue")
+];
+
+
+saveNames.addEventListener('click', () => {
+    const player1Name = document.querySelector("#playerOne").value;
+    const player2Name = document.querySelector("#playerTwo").value;
+
+    if (player1Name) {
+        players[0].name = player1Name;
+        document.querySelector(".red").textContent=player1Name;
+
+    }
+
+    if (player2Name) {
+        players[1].name = player2Name;
+        document.querySelector(".blue").textContent=player2Name
+    }
+    dialog.close();
+    console.log(players);
+});
+
 
 // Show and close the dialog
 changeNames.addEventListener('click', () => dialog.showModal());
@@ -29,6 +53,7 @@ let gameboard = new Array(9).fill("");
 
 // Function to manage turns
 const turns = () => {
+    
     const currentPlayer = players[turn];
     turn = (turn + 1) % players.length; // Cycle through players
     return currentPlayer;
@@ -119,7 +144,7 @@ const showWinnerDialog = (currentPlayer) => {
     const winner = document.querySelector("#winnerName");
     winner.textContent = `${currentPlayer.name} wins!`;
 
-    const winnerDialog = document.querySelector(".winner");
+    // const winnerDialog = document.querySelector(".winner");
     winnerDialog.showModal();
 
     const closeWinnerDialog = document.querySelector(".closeWinnerDialog");
@@ -131,7 +156,7 @@ const showWinnerDialog = (currentPlayer) => {
 
 
 const showTieDialog = () => {
-    const winnerDialog = document.querySelector(".winner");
+    // const winnerDialog = document.querySelector(".winner");
     const winner = document.querySelector("#winnerName");
     winner.textContent = "It's a tie!";
 
