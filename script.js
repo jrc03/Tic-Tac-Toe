@@ -126,6 +126,7 @@ const checkWin = () => {
     for (let i = 0; i < winningCombinations.length; i++) {
         const [a, b, c] = winningCombinations[i];
         if (gameboard[a] === gameboard[b] && gameboard[b] === gameboard[c] && gameboard[a] !== "") {
+            
             return 'win';
         }
     }
@@ -181,6 +182,8 @@ const resetGame = () => {
 const initGame = () => {
     resetCont.addEventListener('click', resetGame);
     displayBoard();
+
+    startBtn.disabled=true;
 
     // Create and append the reset button
     const resetBtn = document.createElement('input');
